@@ -2,18 +2,25 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using System.Reflection.Emit;
 [ExecuteAlways]
 public class CordinateLabeler : MonoBehaviour
 {
+    [SerializeField] Color DefaultColor = Color.white;
+    [SerializeField] Color BlockedColor = Color.gray;
     TextMeshPro label;
     Vector2Int coordinates = new Vector2Int();
+    Waypoint waypoint;
 
     void Awake() 
     {
         label = GetComponent<TextMeshPro>();
+        label.enabled = false;
+        waypoint =GetComponentInParent<Waypoint>();
+        
         DisplayCoordinates();
+        
     }
-
     // Update is called once per frame
     void Update()
     {
@@ -22,6 +29,31 @@ public class CordinateLabeler : MonoBehaviour
             DisplayCoordinates();
             updateObjectName();
         }
+
+        ColorCoordinates();
+        ToogleLabels();
+    
+    }
+
+    void ColorCoordinates()
+    {
+        if (waypoint.isPlaceable)
+        {
+            label.color = DefaultColor;
+        }
+        else
+        {
+            label.color = BlockedColor;
+        }
+    }
+
+    void ToogleLabels()
+    {
+        if(Input.GetKeyDown(KeyCode.C))
+        {
+            label.enabled = !label.IsActive();
+        }
+
     }
 
     void DisplayCoordinates()
