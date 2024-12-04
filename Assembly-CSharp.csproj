@@ -65,6 +65,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Enemy\Enemy.cs" />
+    <Compile Include="Assets\Tile\Cordinatelabeler.cs" />
     <Compile Include="Assets\Tower\Tower.cs" />
     <Compile Include="Assets\Tile\Waypoint.cs" />
     <Compile Include="Assets\Tower\TargetLocator.cs" />

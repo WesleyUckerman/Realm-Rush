@@ -6,7 +6,7 @@ using System.Reflection.Emit;
 [ExecuteAlways]
 
 [RequireComponent(typeof(TextMeshPro))]
-public class CordinateLabeler : MonoBehaviour
+public class Cordinatelabeler : MonoBehaviour
 {
     [SerializeField] Color DefaultColor = Color.white;
     [SerializeField] Color BlockedColor = Color.gray;
@@ -30,6 +30,7 @@ public class CordinateLabeler : MonoBehaviour
         {
             DisplayCoordinates();
             updateObjectName();
+            label.enabled=true;
         }
 
         SetLabelColor();
