@@ -357,6 +357,8 @@
 "Assets/Enemy/EnemyHealth.cs"
 "Assets/Enemy/EnemyMover.cs"
 "Assets/Enemy/ObjectPool.cs"
+"Assets/Pathfind/GridManager.cs"
+"Assets/Pathfind/Node.cs"
 "Assets/Tile/Cordinatelabeler.cs"
 "Assets/Tile/Waypoint.cs"
 "Assets/Tower/TargetLocator.cs"
